@@ -39,11 +39,11 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
-group :development do #Added first edit
+# group :development do #Added first edit
   gem 'haml-rails'
   gem 'hpricot'
   gem 'ruby_parser'
-end
+# end
 
 group :development, :test do #Added first edit
   gem "rspec-rails", '~> 2.6'
