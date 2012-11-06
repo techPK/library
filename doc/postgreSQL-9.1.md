@@ -4,7 +4,7 @@
 
   1. [PostgreSQL setup for Rails development in Ubuntu 12.04 ](http://linuxrails.blogspot.com/2012/06/postgresql-setup-for-rails-development.html)
 
-  2. [Installing PostgreSQL 9.0 on Ubuntu (11.04) using PPA](http://socrateos.blogspot.in/2011/07/installing-postgresql-90-on-ubuntu-1104.html
+  2. [Installing PostgreSQL 9.0 on Ubuntu (11.04) using PPA](http://socrateos.blogspot.in/2011/07/installing-postgresql-90-on-ubuntu-1104.html)
 
   3. [Installing the postgresql 9.1 on Ubuntu 11](http://openrails.blogspot.com/2012/02/installing-postgresql-91-on-ubuntu-11.html)
 
@@ -13,7 +13,7 @@
 
 ### Overview:
 
-The easiest and more reliable way to install PostgreSQL on Ubuntu seems to be using [the install package maintained by Martin Pitt](https://launchpad.net/~pitti/+archive/postgresql), the offical maintainer of Debian- and Ubuntu PostgreSQL packages.
+The easiest and more reliable way to install PostgreSQL on Ubuntu seems to be using [the install package maintained by Martin Pitt](https://launchpad.net/~pitti/+archive/postgresql), the offical maintainer of Debian and Ubuntu PostgreSQL packages.
 
 ### Setup Procedures
 
@@ -48,11 +48,11 @@ The easiest and more reliable way to install PostgreSQL on Ubuntu seems to be us
   	$ sudo /etc/init.d/postgresql restart  
   	$ sudo /etc/init.d/postgresql status
 
-### Finally Install pgAdmin III
+### Finally Install pgAdmin 3
 
 After I installed this, I found I never use it since I'm more comfortable using 'rails db' for my admin activities.
 
-But for completeness, perhap you should always install it...
+But for completeness, perhaps you should always install it...
 
   	$ sudo apt-get install pgadmin3   # install the latest pgAdminIII
   	$ pgadmin3                        # launch it

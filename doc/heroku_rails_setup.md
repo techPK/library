@@ -2,7 +2,7 @@
 
 SOURCE: [Creating a staging environment on Heroku](http://www.johnplummer.com/tag/staging)
 
-Assumption:
+###Assumptions:
 
   PostgreSQL, Ruby, and Ruby-on-Rails are installed on the development workstation.
 
@@ -15,31 +15,31 @@ Assumption:
   
   2. Configure the test case app so that is can work on the development workstation:
   
-    2.1 Edit 'config/database.yml' by adding the local PostgreSQL user and password
+  2.1. Edit 'config/database.yml' by adding the local PostgreSQL user and password
     
-    2.2 Edit Gemfile by adding/changing the following:
-    	gem 'bootstrap-sass', '~> 2.0.4.0' #Added first edit
-    	gem 'thin'   #Added first edit
-    	gem 'execjs'   #Added first edit in group :asset
-    	gem 'therubyracer', :platforms => :ruby  #Uncomment first edit  in group :asset
-    	# group :development development #Added first edit
-    	  gem 'haml-rails'
-    	  gem 'hpricot'
-    	  gem 'ruby_parser'
-    	# end
-    	group :development, :test #Added first edit
-    	  gem "rspec-rails", '~> 2.6'
-    	  gem 'capybara'
-    	  # gem 'capybara-webkit'
-    	  gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
-    	  gem "foreman", "~> 0.51.0"
-    	end
+  2.2. Edit Gemfile by adding/changing the following:
+    gem 'bootstrap-sass', '~> 2.0.4.0' #Added first edit
+    gem 'thin'   #Added first edit
+  	gem 'execjs'   #Added first edit in group :asset
+   	gem 'therubyracer', :platforms => :ruby  #Uncomment first edit  in group :asset
+      # group :development development #Added first edit
+      gem 'haml-rails'
+      gem 'hpricot'
+      gem 'ruby_parser'
+      # end
+    group :development, :test #Added first edit
+      gem "rspec-rails", '~> 2.6'
+      gem 'capybara'
+      # gem 'capybara-webkit'
+      gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
+      gem "foreman", "~> 0.51.0"
+    end
     
-    2.3 Use Rails scaffolding to generate a working test-case app.
-    	$ rake db:create:all
-    	$ rails g scaffold book name subject:text page_count:integer
-    	$ rake db:migrate
-    	$ rails s # test localhost:3000/books in web-browser
+  2.3. Use Rails scaffolding to generate a working test-case app.
+    $ rake db:create:all
+    $ rails g scaffold book name subject:text page_count:integer
+    $ rake db:migrate
+    $ rails s # test localhost:3000/books in web-browser
     	
   3. Test that the test-case is working. Confirm that http://localhost:3000/books works in the workstation web browser.
 
