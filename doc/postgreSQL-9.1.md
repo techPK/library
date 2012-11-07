@@ -13,7 +13,7 @@
 
 ### Overview:
 
-The easiest and more reliable way to install PostgreSQL on Ubuntu seems to be using [the install package maintained by Martin Pitt](https://launchpad.net/~pitti/+archive/postgresql), the offical maintainer of Debian and Ubuntu PostgreSQL packages.
+The easiest and more reliable way to install PostgreSQL on Ubuntu is to use [the install package maintained by Martin Pitt](https://launchpad.net/~pitti/+archive/postgresql). Mr. Pitt is the offical maintainer of Debian and Ubuntu PostgreSQL packages.
 
 ### Setup Procedures
 

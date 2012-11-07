@@ -24,12 +24,12 @@ gem 'bootstrap-sass', '~> 2.0.4.0' #Added first edit
 gem 'thin'   #Added first edit  
 gem 'execjs'   #Added first edit in group :asset  
 gem 'therubyracer', :platforms => :ruby  #Uncomment first edit  in group :asset  
-\# group :development development #Added first edit  
+\# group :development do #Added first edit  
   gem 'haml-rails'  
   gem 'hpricot'  
   gem 'ruby_parser'  
 \# end  
-group :development, :test #Added first edit  
+group :development, :test do #Added first edit  
   gem "rspec-rails", '~> 2.6'  
   gem 'capybara'  
   \# gem 'capybara-webkit'  
@@ -52,7 +52,9 @@ Confirm that http://localhost:3000/books works in the workstation web browser.
 ### Configure for Git use:  
 
 1. Begin edit to add restrictions to .gitignore list  
-  $ nano gitignore  
+```bash
+$ nano gitignore  
+```
 
 2. Add these additional restrictions to .gitignore list  
 ```text
