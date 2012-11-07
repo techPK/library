@@ -10,36 +10,36 @@ SOURCE: [Creating a staging environment on Heroku](http://www.johnplummer.com/ta
 
   1. Create a test Rails application
 
-    $ rails new library -d postgresql -T
-    $ cd library
+  $ rails new library -d postgresql -T
+  $ cd library
   
   2. Configure the test case app so that is can work on the development workstation:
   
   2.1. Edit 'config/database.yml' by adding the local PostgreSQL user and password
     
   2.2. Edit Gemfile by adding/changing the following:
-    gem 'bootstrap-sass', '~> 2.0.4.0' #Added first edit
-    gem 'thin'   #Added first edit
-  	gem 'execjs'   #Added first edit in group :asset
-   	gem 'therubyracer', :platforms => :ruby  #Uncomment first edit  in group :asset
-      # group :development development #Added first edit
-      gem 'haml-rails'
-      gem 'hpricot'
-      gem 'ruby_parser'
-      # end
-    group :development, :test #Added first edit
-      gem "rspec-rails", '~> 2.6'
-      gem 'capybara'
-      # gem 'capybara-webkit'
-      gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
-      gem "foreman", "~> 0.51.0"
-    end
+  gem 'bootstrap-sass', '~> 2.0.4.0' #Added first edit
+  gem 'thin'   #Added first edit
+  gem 'execjs'   #Added first edit in group :asset
+  gem 'therubyracer', :platforms => :ruby  #Uncomment first edit  in group :asset
+  # group :development development #Added first edit
+    gem 'haml-rails'
+    gem 'hpricot'
+    gem 'ruby_parser'
+  # end
+  group :development, :test #Added first edit
+    gem "rspec-rails", '~> 2.6'
+    gem 'capybara'
+    # gem 'capybara-webkit'
+    gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
+    gem "foreman", "~> 0.51.0"
+  end
     
   2.3. Use Rails scaffolding to generate a working test-case app.
-    $ rake db:create:all
-    $ rails g scaffold book name subject:text page_count:integer
-    $ rake db:migrate
-    $ rails s # test localhost:3000/books in web-browser
+  $ rake db:create:all
+  $ rails g scaffold book name subject:text page_count:integer
+  $ rake db:migrate
+  $ rails s # test localhost:3000/books in web-browser
     	
   3. Test that the test-case is working. Confirm that http://localhost:3000/books works in the workstation web browser.
 
@@ -48,68 +48,63 @@ SOURCE: [Creating a staging environment on Heroku](http://www.johnplummer.com/ta
 
   1. Begin edit to add restrictions to .gitignore list
 
-    $ nano gitignore 
+  $ nano gitignore 
 
   2. Add these additional restrictions to .gitignore list
-    /doc/*.doc
-    /doc/*.txt
-    /doc/*.xsl
-    /*.*~
-    /doc/*.*~
+  /doc/*.doc
+  /doc/*.txt
+  /doc/*.xsl
+  /*.*~
+  /doc/*.*~
   
   3. Use Git to make the first test-case Git commit:
-    $ git init
-    $ git add .
-    $ git commit -m "initial commit"
+  $ git init
+  $ git add .
+  $ git commit -m "initial commit"
   
 ### Install Heroku toolbelt, setup production deployment, and setup staging deployment:
 
   1. Run the following command:
-
-    $ wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sudo sh
+  $ wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sudo sh
 
   2. Verify success by logging into your Heroku account.
-  
-    $ heroku login
+  $ heroku login
   
   3. Setup Heroku Production deployment:
-
-    $ cd ~/library
-    $ heroku create production-library --remote production
+  $ cd ~/library
+  $ heroku create production-library --remote production
 
   3.1. Verify public key 'id_rsa.pub' exists
-    $ ls -la ~/.ssh 
+  $ ls -la ~/.ssh 
     
   3.2. Generate public key. Do this ONLY if you don't have one!
-    $ ssh-keygen -t rsa 
+  $ ssh-keygen -t rsa 
   
   3.4. Add local workstation public key to Heroku.
-    $ heroku keys:add ~/.ssh/id_rsa.pub
+  $ heroku keys:add ~/.ssh/id_rsa.pub
 
   3.5. Complete Heroku production deployment:
-    $ RAILS_ENV=production bundle exec rake assets:precompile
-    $ git add public/assets
-    $ git commit -m "vendor compiled assets"
-    $ git push production master
-    $ heroku run rake db:migrate --remote production
-    $ heroku open --remote production
+  $ RAILS_ENV=production bundle exec rake assets:precompile
+  $ git add public/assets
+  $ git commit -m "vendor compiled assets"
+  $ git push production master
+  $ heroku run rake db:migrate --remote production
+  $ heroku open --remote production
 
   4. Setup Heroku Staging deployment:
-
-    $ cd ~/library
+  $ cd ~/library
 
   4.1. Create Staging environment by copying setting for Production:
-    $ cd config/environments/
-    $ cp production.rb staging.rb
-    $ cd ../..
-    $ git add config/environments/
-    $ git commit -m "create staging.rb"
+  $ cd config/environments/
+  $ cp production.rb staging.rb
+  $ cd ../..
+  $ git add config/environments/
+  $ git commit -m "create staging.rb"
     
-  
   4.2. Complete Heroku staging deployment:
-    $ heroku create staging-library --remote staging
-    $ git push staging master
-    $ heroku config:add RAKE_ENV=staging --remote staging
-    $ heroku config:add RAILS_ENV=staging --remote staging
-    $ heroku rake db:migrate --remote staging
-    $ heroku open --remote staging
+  $ heroku create staging-library --remote staging
+  $ git push staging master
+  $ heroku config:add RAKE_ENV=staging --remote staging
+  $ heroku config:add RAILS_ENV=staging --remote staging
+  $ heroku rake db:migrate --remote staging
+  $ heroku open --remote staging
