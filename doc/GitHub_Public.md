@@ -27,9 +27,12 @@ In my test case, my workstation's ssh public key was located in "~/.ssh/id_rsa.p
 ##### Step 3
 
 1. GitHub will give "Push an existing repository from the command line" instructions. In my test case, the my GitHub given instructions were to run the following commands in my application directory root:   
-	$ git remote add origin git@github.com:techPK/library.git  
-	$ git push -u origin master  
-    
+```bash
+$ git remote add origin git@github.com:techPK/library.git  
+$ git push -u origin master  
+```    
 
 2. Verify that Git has a 'origin' remote:  
-	$ git remote
+```bash
+$ git remote
+```
