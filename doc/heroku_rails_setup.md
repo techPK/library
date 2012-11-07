@@ -9,8 +9,8 @@ SOURCE: [Creating a staging environment on Heroku](http://www.johnplummer.com/ta
 ### Create a test case for app deployment to Heroku:
 
   1. Create a test Rails application  
-    $ rails new library -d postgresql -T
-    $ cd library
+  $ rails new library -d postgresql -T
+  $ cd library
   
   2. Configure the test case app so that is can work on the development workstation:
   
