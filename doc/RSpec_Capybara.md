@@ -77,7 +77,7 @@ SOURCE: http://codingfrontier.com/integration-testing-setup-with-rspec-2-and-ca
 SOURCE: https://github.com/jnicklas/capybara
 
 1. Paste the following into file "spec/support/integration_example_group.rb": 
-
+```ruby
     require 'action_dispatch'
     require 'capybara/rails'
     require 'capybara/dsl'
@@ -113,14 +113,14 @@ SOURCE: https://github.com/jnicklas/capybara
         end
       end
     end
-
+```
 
 2. Make integration directory:
-
+```bash
     $ mkdir spec/integration
-
+```
 3. Make test for root_path
-
+```ruby
     # in spec/integration/root_path_spec.rb
     
     require ‘spec_helper’ 
@@ -130,6 +130,7 @@ SOURCE: https://github.com/jnicklas/capybara
         visit root_path
       end
     end
+```
 
 4. We'll save the setup for Guard, Spork, and Launchy for another day...
 
