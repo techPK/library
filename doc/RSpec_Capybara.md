@@ -85,7 +85,7 @@ SOURCE: https://github.com/jnicklas/capybara
     module RSpec::Rails
       module IntegrationExampleGroup
         extend ActiveSupport::Concern
-    
+        
         include ActionDispatch::Integration::Runner
         include RSpec::Rails::TestUnitAssertionAdapter
         include ActionDispatch::Assertions
@@ -127,17 +127,19 @@ SOURCE: https://github.com/jnicklas/capybara
     
     describe root_path
       it "is present" do
-       	visit root_path
+        visit root_path
       end
     end
 
-3. We'll save the setup for Guard, Spork, and Launchy for another day...
+4. We'll save the setup for Guard, Spork, and Launchy for another day...
+------------------------------------------------------------------------
 
-
+## Notes 
+Don't read below this!!!
 
 ============
 
-Make tests for the web interface first (Views): Navigation (based on expected wire-frame web-page elements such as buttons, links, and )
+Make tests for the web interface first (Views): Navigation (based on expected wire-frame web-page elements such as buttons, links)
 
 Use RSpec/Capybara for this testing:
 
@@ -152,7 +154,6 @@ Use RSpec/Capybara for this testing:
 Make a rough determination of database requirements and express this as a Rails ActiveRecord Model with relationships between expected tables.
 
 Use RSpec/FactoryGirl for this testing
-
-===========
+--------------------------------------
 
     rails new Koyinsho99 -m http://railswizard.org/9aff647f23e558e6bfe8.rb -T
