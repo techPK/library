@@ -132,9 +132,10 @@ SOURCE: https://github.com/jnicklas/capybara
     end
 
 4. We'll save the setup for Guard, Spork, and Launchy for another day...
-------------------------------------------------------------------------
 
 ## Notes 
+--------
+
 Don't read below this!!!
 
 ============
