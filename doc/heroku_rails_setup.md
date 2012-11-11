@@ -24,15 +24,15 @@ gem 'bootstrap-sass', '~> 2.0.4.0' #Added first edit
 gem 'thin'   #Added first edit  
 gem 'execjs'   #Added first edit in group :asset  
 gem 'therubyracer', :platforms => :ruby  #Uncomment first edit  in group :asset  
-\# group :development do #Added first edit  
+# group :development do #Added first edit  
   gem 'haml-rails'  
   gem 'hpricot'  
   gem 'ruby_parser'  
-\# end  
+# end  
 group :development, :test do #Added first edit  
   gem "rspec-rails", '~> 2.6'  
   gem 'capybara'  
-  \# gem 'capybara-webkit'  
+  # gem 'capybara-webkit'  
   gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i  
   gem "foreman", "~> 0.51.0"  
 end  
